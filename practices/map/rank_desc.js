@@ -1,6 +1,18 @@
 'use strict';
 var rank_desc = function(collection){
-  return [2,3,4,5,6];
+  let result = [];
+  let temp = 0;
+  for (let j = 0; j<collection.length;j++){
+    for(let i = 1; i<collection.length;i++){
+      if (collection[i-1]>collection[i]){
+        temp = collection[i];
+        collection[i] = collection[i-1];
+        collection[i-1] = temp;
+      }
+    }
+  }
+  result = collection
+  return result;
 };
 
 module.exports = rank_desc;
